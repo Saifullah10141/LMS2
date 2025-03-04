@@ -46,11 +46,11 @@
         btn.addEventListener("click", ()=>{
             form.action = "";
             let role = document.getElementById("Role").value;
-            if (role === "Student") form.action = "/LMS/student/dashboard.html";
-            else if (role === "Teacher") form.action = "/LMS/teacher/dashboard.html";
-            else if (role === "Course Coordinator") form.action = "/LMS/course_coordinator/dashboard.html";
-            else if (role === "LMS Manager") form.action = "/LMS/lms_manager/dashboard.html";
-            else form.action = "/LMS/admin/dashboard.html";
+            if (role === "Student") form.action = "/student/dashboard.html";
+            else if (role === "Teacher") form.action = "/teacher/dashboard.html";
+            else if (role === "Course Coordinator") form.action = "/course_coordinator/dashboard.html";
+            else if (role === "LMS Manager") form.action = "/lms_manager/dashboard.html";
+            else form.action = "/admin/dashboard.html";
         })
     </script>
 </body>
