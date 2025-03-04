@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Quiz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #btn{
+            color: white;
+            background-color: green;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            float: right;
+            font-size: 20px;
+
+        }
+        #Greeting{
+            color: green;
+            font-size: 50px;
+        }
+        body {
+            display: flex;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #111;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #333;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .sidebar a:hover {
+            background-color: #555;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+        .quiz-options {
+            list-style: none;
+        }
+        .quiz-options li {
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #222;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .quiz-options li:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="/LMS/student/enroll_subjects.html">Enrolled Subjects</a>
+        <a href="/LMS/student/assignment.html">Assignment</a>
+        <a href="/LMS/student/quiz.html">Quiz</a>
+    </div>
+
+    <div class="main-content">
+        <h1 id="Greeting"></h1>
+        <h1>Quiz</h1>
+        <form action="/saiff/LMS/student/quiz_submitted.html">
+            <div class="quiz-question">
+                <h2>Q1. How many Programming Languages do you know?</h2>
+            </div>
+            <ul class="quiz-options">
+                <li> <input type="radio"> A) 5 or Above</li>
+                <li> <input type="radio"> B) 10 or Above</li>
+                <li> <input type="radio"> C) 20 or Above</li>
+                <li> <input type="radio"> D) 50 or Above</li>
+            </ul>
+            <div class="quiz-question">
+                <h2>Q2. How many Programming Languages do you know?</h2>
+            </div>
+            <ul class="quiz-options">
+                <li> <input type="radio"> A) 5 or Above</li>
+                <li> <input type="radio"> B) 10 or Above</li>
+                <li> <input type="radio"> C) 20 or Above</li>
+                <li> <input type="radio"> D) 50 or Above</li>
+            </ul>
+            <div class="quiz-question">
+                <h2>Q3. How many Programming Languages do you know?</h2>
+            </div>
+            <ul class="quiz-options">
+                <li> <input type="radio"> A) 5 or Above</li>
+                <li> <input type="radio"> B) 10 or Above</li>
+                <li> <input type="radio"> C) 20 or Above</li>
+                <li> <input type="radio"> D) 50 or Above</li>
+            </ul>
+            <div class="quiz-question">
+                <h2>Q4. How many Programming Languages do you know?</h2>
+            </div>
+            <ul class="quiz-options">
+                <li> <input type="radio"> A) 5 or Above</li>
+                <li> <input type="radio"> B) 10 or Above</li>
+                <li> <input type="radio"> C) 20 or Above</li>
+                <li> <input type="radio"> D) 50 or Above</li>
+            </ul>
+            <div class="quiz-question">
+                <h2>Q5. How many Programming Languages do you know?</h2>
+            </div>
+            <ul class="quiz-options">
+                <li> <input type="radio"> A) 5 or Above</li>
+                <li> <input type="radio"> B) 10 or Above</li>
+                <li> <input type="radio"> C) 20 or Above</li>
+                <li> <input type="radio"> D) 50 or Above</li>
+            </ul>
+            <button type="submit" id="btn">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function updateGreeting() {
+            const greetingElement = document.getElementById("Greeting");
+            const now = new Date();
+            const hours = now.getHours();
+            
+            let greeting = "";
+
+            if (hours >= 5 && hours <= 12) greeting = "Good Morning";
+            else if (hours >= 12 && hours <= 16) greeting = "Good Afternoon";
+            else if (hours >= 16 && hours <= 19) greeting = "Good Evening";
+            else greeting = "Good Night";
+
+            greetingElement.innerText = "Hi, " + "[Undefined] " + greeting;
+        }
+        updateGreeting();
+    </script>
+</body>
+</html>
