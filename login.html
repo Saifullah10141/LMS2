@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        *{
+            color: white;
+            background-color: black;
+            padding: 5px;
+        }
+        .input{
+            color: white;
+            background-color: green;
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <form id="Form">
+    <h3>Select Your Role:</h3>
+        <select class="form-select form-select-lg mb-3 input" aria-label="Large select example" id="Role">
+            <option selected>Student</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Course Coordinator">Course Coordinator</option>
+            <option value="LMS Manager">LMS Manager</option>
+            <option value="Admin">Admin</option>
+        </select>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            <div id="emailHelp" class="form-text" style="color:white;">Saif will never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control input" id="exampleInputPassword1" required>
+        </div>
+        <button type="submit" class="btn btn-primary input" style="float: right;">Submit</button>
+    </form>
+    <script>
+        let btn = document.getElementsByClassName("btn-primary")[0];
+        let form = document.getElementById("Form");
+
+        btn.addEventListener("click", ()=>{
+            form.action = "";
+            let role = document.getElementById("Role").value;
+            if (role === "Student") form.action = "/saiff/LMS/student/dashboard.html";
+            else if (role === "Teacher") form.action = "/saiff/LMS/teacher/dashboard.html";
+            else if (role === "Course Coordinator") form.action = "/saiff/LMS/course_coordinator/dashboard.html";
+            else if (role === "LMS Manager") form.action = "/saiff/LMS/lms_manager/dashboard.html";
+            else form.action = "/saiff/LMS/admin/dashboard.html";
+        })
+    </script>
+</body>
+</html>
