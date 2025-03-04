@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Assignment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #Greeting{
+            color: green;
+            font-size: 50px;
+        }
+        body {
+            display: flex;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #111;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #333;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .sidebar a:hover {
+            background-color: #555;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="/LMS/student/enroll_subjects.html">Enrolled Subjects</a>
+        <a href="/LMS/student/assignment.html">Assignment</a>
+        <a href="/LMS/student/quiz.html">Quiz</a>
+    </div>
+
+    <div class="main-content">
+        <h1 id="Greeting"></h1>
+        <div style="font-size: 120px;">Under Maintainance</div>
+    </div>
+
+    <script>
+        function updateGreeting() {
+            const greetingElement = document.getElementById("Greeting");
+            const now = new Date();
+            const hours = now.getHours();
+            
+            let greeting = "";
+
+            if (hours >= 5 && hours <= 12) greeting = "Good Morning";
+            else if (hours >= 12 && hours <= 16) greeting = "Good Afternoon";
+            else if (hours >= 16 && hours <= 19) greeting = "Good Evening";
+            else greeting = "Good Night";
+
+            greetingElement.innerText = "Hi, " + "[Undefined] " + greeting;
+        }
+        updateGreeting();
+    </script>
+</body>
+</html>
